@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>User List</title>
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body>
+        <ul id="user-list">
+            <% users.forEach(user => { %>
+            <li data-id="<%= user.id %>">
+                <span class="arrow">&#x25BA;</span>
+                <div class="user-info">
+                    <span class="info-title">姓名：</span><span class="name"><%= user.name %></span><br />
+                    <span class="info-title">電子郵件：</span><span class="email"><%= user.email %></span>
+                </div>
+                <div class="details hidden">
+                    <p>
+                        <strong>帳號：</strong>
+                        <span class="account-display"><%= user.account %></span>
+                        <input class="account-edit edit-field" type="text" value="<%= user.account %>" hidden />
+                        <button class="edit-button" data-field="account">編輯</button>
+                        <button class="save-button" data-field="account" hidden>保存</button>
+                    </p>
+                    <p>
+                        <strong>電話：</strong>
+                        <span class="phone-display"><%= user.phone %></span>
+                        <input class="phone-edit edit-field" type="text" value="<%= user.phone %>" hidden />
+                        <button class="edit-button" data-field="phone">編輯</button>
+                        <button class="save-button" data-field="phone" hidden>保存</button>
+                    </p>
+                    <p>
+                        <strong>年齡：</strong>
+                        <span class="age-display"><%= user.age %></span>
+                        <input class="age-edit edit-field" type="text" value="<%= user.age %>" hidden />
+                        <button class="edit-button" data-field="age">編輯</button>
+                        <button class="save-button" data-field="age" hidden>保存</button>
+                    </p>
+                    <p>
+                        <strong>地址：</strong>
+                        <span class="address-display"><%= user.address %></span>
+                        <input class="address-edit edit-field" type="text" value="<%= user.address %>" hidden />
+                        <button class="edit-button" data-field="address">編輯</button>
+                        <button class="save-button" data-field="address" hidden>保存</button>
+                    </p>
+                    <p>
+                        <strong>帳號建立時間：</strong>
+                        <span class="create-time-display"><%= user.create_time %></span>
+                    </p>
+                </div>
+            </li>
+            <% }); %>
+        </ul>
+
+        <script src="/script.js"></script>
+    </body>
+</html>
