@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>User List</title>
+        <title>CRUD User List</title>
         <link rel="stylesheet" href="/styles.css" />
     </head>
     <body>
@@ -12,6 +12,7 @@
             <li data-id="<%= user.id %>">
                 <span class="arrow">&#x25BA;</span>
                 <div class="user-info">
+                    <span class="info-title">ID：</span><span class="user_id"><%= user.id %></span><br />
                     <span class="info-title">姓名：</span><span class="name"><%= user.name %></span><br />
                     <span class="info-title">電子郵件：</span><span class="email"><%= user.email %></span>
                 </div>
